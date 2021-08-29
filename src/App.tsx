@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ItemBox from './Components/ItemBox/Index';
-import Menu from './Components/Menu/Index';
+import ItemMenu from './Components/ItemMenu/Index';
 import './App.css';
-import {Item, Variety, SelectedItem, Position} from './Types/Index';
+import {Item, Variety, SelectedItem, CodePart} from './Types/Index';
 
 const App = () => {
   const [itemList, setItemList] = useState<Item[]>([])
@@ -10,7 +10,7 @@ const App = () => {
   const [itemSelected, setItemSelected] = useState<SelectedItem | undefined>()
   const [orderCode, setOrderCode] = useState('')
   const [fullOrder, setFullOrder] = useState<string[]>([])
-  const [arr, setArr] = useState<Position[]>([])
+  const [codeParts, setCodeParts] = useState<CodePart[]>([])
 
   const getData=()=>{
     fetch('sample.json'
@@ -54,19 +54,18 @@ const App = () => {
     })
 
     setItemSelected(newSelectedItem)
-    const code : string = userChosenItem.code
-    setOrderCode(code)
+    const startingCode : string = userChosenItem.code
+    setOrderCode(startingCode)
 
-    let tempArr: Position[] = []
+    let codePartCollection: CodePart[] = []
 
-    newSelectedItem.varieties.map((v) => {
-      const position: Position = {
-        type: v.description,
+    newSelectedItem.varieties.forEach(variety => {
+      const part: CodePart = {
+        type: variety.description,
         id: " - "
     }
-    tempArr.push(position)
-    setArr(tempArr)
-    return(NaN)
+    codePartCollection.push(part)
+    setCodeParts(codePartCollection)    
     })
   }
 
@@ -98,12 +97,12 @@ const App = () => {
               )
           )
           : 
-          <Menu 
+          <ItemMenu 
             item={itemSelected}
             onSubmit={AddSelection}
             onReturn={BackToMenu}
             code={orderCode}
-            arr={arr}
+            arr={codeParts}
           />}
         </div>
 

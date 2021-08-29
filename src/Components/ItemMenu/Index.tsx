@@ -1,10 +1,10 @@
 import React, { FC, useState } from 'react';
 import './Styles.css';
-import {Inputs, MenuProps} from '../../Types/Index';
+import {Inputs, ItemMenuProps} from '../../Types/Index';
 import OptionFrame from '../OptionFrame/Index';
 import { useForm, SubmitHandler } from "react-hook-form";
 
-const Menu: FC<MenuProps> = ({item, onSubmit, onReturn, code, arr}) => {
+const ItemMenu: FC<ItemMenuProps> = ({item, onSubmit, onReturn, code, arr}) => {
     
     const [orderCode, setOrderCode] = useState<string>(code)
     const {register, handleSubmit} = useForm<Inputs>()
@@ -58,4 +58,4 @@ const Menu: FC<MenuProps> = ({item, onSubmit, onReturn, code, arr}) => {
     </div>        
 )}
 
-export default Menu
+export default ItemMenu

@@ -22,30 +22,30 @@ export type SelectedItem = {
     varieties: Variety[]
   }
 
-export type Position = {
-    type: string
+export type CodePart = {
+    type: string;
     id?: string
   }
 
 export  type Inputs = {
-  amount: string,
+  amount: string
 }
 
-export type MenuProps = {
-  item: SelectedItem
-  onSubmit: (codeToSet : string) => void
-  onReturn: () => void
-  code: string
-  arr: Position[]
+export type ItemMenuProps = {
+  item: SelectedItem;
+  onSubmit: (codeToSet : string) => void;
+  onReturn: () => void;
+  code: string;
+  arr: CodePart[]
 }
 
 export type OptionFrameProps = {
-  variety : Variety
+  variety : Variety;
   updateCode : (a: string, b: string) => void
 }
 
 export type ItemBoxProps = {
-  name: string
-  onClick?: () => void
+  name: string;
+  onClick?: () => void;
   type?: 'button' | 'submit'
 }
