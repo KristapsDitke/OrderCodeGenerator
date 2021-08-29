@@ -1,0 +1,16 @@
+.optionFrame {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.optionFrame label{
+  font-size: 20px;
+}
+
+.optionFrame p{
+  font-size:x-large;
+  padding: 2px;
+  margin: 5px;
+}

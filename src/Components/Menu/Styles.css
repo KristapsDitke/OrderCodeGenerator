@@ -1,0 +1,41 @@
+.outLine{
+    background-color: rgb(47, 54, 56);
+    padding: 25px;
+    border-radius: 40px;
+}
+
+.optionFrame{
+    display: inline-block;
+    margin: 30px;
+}
+
+.codePreview{
+    font-size: 15px;
+    text-decoration: solid;
+    border-style: inherit;
+    border-color: black;    
+    border: 2px;
+}
+
+.orderForm{
+    align-items: center;
+}
+
+.orderForm h3{
+    padding: 10px;
+    margin: 10px;
+}
+
+.one label{
+    font-size: 20px;
+}
+
+.one input{
+    max-width: 40px;
+}
+
+label {
+    margin-right: 20px;
+    margin-left: 10px;
+    color:rgb(182, 179, 179);
+}
