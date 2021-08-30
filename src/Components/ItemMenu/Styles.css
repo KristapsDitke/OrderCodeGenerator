@@ -1,7 +1,10 @@
 .outLine{
-    background-color: rgb(47, 54, 56);
+    background-color: rgb(54, 65, 68);
     padding: 25px;
-    border-radius: 40px;
+    border-radius: 10px;
+    border-style: inset;
+    border-color: rgba(117, 109, 163, 0.295);
+    border-width: 5px;
 }
 
 .optionFrame{

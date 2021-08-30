@@ -37,6 +37,7 @@ const App = () => {
     setItemSelected(undefined)
   }
 
+  
   const GetChoices = (userChosenItem: Item) => {
 
     const newSelectedItem : SelectedItem = {
@@ -68,6 +69,7 @@ const App = () => {
     setCodeParts(codePartCollection)    
     })
   }
+
 
   const AddSelection = (newCode: string) => {
 
@@ -102,7 +104,7 @@ const App = () => {
             onSubmit={AddSelection}
             onReturn={BackToMenu}
             code={orderCode}
-            arr={codeParts}
+            codeParts={codeParts}
           />}
         </div>
 

@@ -4,24 +4,24 @@ import {Inputs, ItemMenuProps} from '../../Types/Index';
 import OptionFrame from '../OptionFrame/Index';
 import { useForm, SubmitHandler } from "react-hook-form";
 
-const ItemMenu: FC<ItemMenuProps> = ({item, onSubmit, onReturn, code, arr}) => {
+const ItemMenu: FC<ItemMenuProps> = ({item, onSubmit, onReturn, code, codeParts}) => {
     
     const [orderCode, setOrderCode] = useState<string>(code)
     const {register, handleSubmit} = useForm<Inputs>()
     
     const updateCode = (id : string, name : string) => {
 
-        arr.forEach(element => {
-            if(element.type === name){
-                element.id = id
+        codeParts.forEach(part => {
+            if(part.type === name){
+                part.id = id
         }})
         
-        let result : string = code
-        arr.forEach(element => {
-            result += "-" + element.id
+        let codeResult : string = code
+        codeParts.forEach(element => {
+            codeResult += "-" + element.id
         });
         
-        setOrderCode(result)
+        setOrderCode(codeResult)
     }
 
     const localSubmit: SubmitHandler<Inputs> = data => {
@@ -49,7 +49,7 @@ const ItemMenu: FC<ItemMenuProps> = ({item, onSubmit, onReturn, code, arr}) => {
             <div className="codePreview">Pasūtījuma kods - {orderCode}</div>
 
             <button type="button" onClick={onReturn}>
-                Atgriezties pie saraksta
+                Atgriezties pie izvēlnes
             </button>
             <button type="submit">
                 Apstiprināt izvēli

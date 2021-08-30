@@ -36,7 +36,7 @@ export type ItemMenuProps = {
   onSubmit: (codeToSet : string) => void;
   onReturn: () => void;
   code: string;
-  arr: CodePart[]
+  codeParts: CodePart[]
 }
 
 export type OptionFrameProps = {
